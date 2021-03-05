@@ -1,0 +1,14 @@
+<html>
+<body>
+    <script>
+        var friends = ["철수", "영수", "민수"];
+        var arrFriends = [];
+        for(var i=0; i<friends.length; i++){
+            if(friends[i] !== "민수"){
+                arrFriends.push(friends[i]);
+            }
+        }
+        var arrFriends2 = friends.filter(item => item !== "민수");
+    </script>
+</body>
+</html>
