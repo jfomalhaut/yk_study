@@ -1,3 +1,14 @@
 첫수업
 1. git
 2. javascript es6문법
+
+git 순서
+
+업로드 할 때
+$ git pull
+$ git add .
+$ git commit -m "message"
+$ git push
+
+받을 때
+$ git pull
