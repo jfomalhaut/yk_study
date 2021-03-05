@@ -14,3 +14,10 @@ $ git push
 $ git pull
 
 ..
+
+react
+
+1. package.json 만들기
+2. webpack.config 설정
+3. webpack, babel, react 설치(npm으로..)
+4. 폴더트리, 파일 생성
