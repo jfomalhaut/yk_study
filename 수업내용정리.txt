@@ -12,3 +12,5 @@ $ git push
 
 받을 때
 $ git pull
+
+..
