@@ -1,14 +1,14 @@
-Ã¹¼ö¾÷
+ì²«ìˆ˜ì—…
 1. git
-2. javascript es6¹®¹ı
+2. javascript es6ë¬¸ë²•
 
-git ¼ø¼­
+git ìˆœì„œ
 
-¾÷·Îµå ÇÒ ¶§
+ì—…ë¡œë“œ í•  ë•Œ
 $ git pull
 $ git add .
 $ git commit -m "message"
 $ git push
 
-¹ŞÀ» ¶§
+ë°›ì„ ë•Œ
 $ git pull
