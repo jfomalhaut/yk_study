@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function Counter() {
-	const [count, setCount] = useState(0);
+	const [count, setCount] = useState(300);
 
 	const increasement = () => {
 		setCount(count + 1);
@@ -12,7 +12,7 @@ function Counter() {
 	};
 
 	useEffect(() => {
-		const arr = String(count).split('').map((item) => ((item * 1) % 3 === 0 ? '짝' : ''));
+		const arr = String(count).split('').map(item => (item * 1 % 3 === 0 && item * 1 > 0) ? '짝' : '');
 
 		if (arr.indexOf('짝') === -1) {
 			console.log(count);
