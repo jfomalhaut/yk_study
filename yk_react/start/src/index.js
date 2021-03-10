@@ -1,4 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App' //.js 생략 가능
+import Counter from './routers/Counter';
 
-ReactDOM.render(<h1>Hello</h1>, document.getElementById('root'));
+ReactDOM.render(<Counter />, document.getElementById('root'));
