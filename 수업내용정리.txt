@@ -1,4 +1,4 @@
-첫수업
+[첫수업]
 1. git
 2. javascript es6문법
 
@@ -21,3 +21,10 @@ react
 2. webpack.config 설정
 3. webpack, babel, react 설치(npm으로..)
 4. 폴더트리, 파일 생성
+
+[2일차]
+
+<react-router-dom> -> 이기능을 이용한 페이지 이동
+BrowserRouter
+
+<hook>, use-* 값을 다루는 방법
