@@ -13,11 +13,22 @@ function Counter(){
 
     useEffect(() => {
         const strCount = count + '';
-        const arr = strCount.split('');
-         //arr.indexOf('3');
-
-        console.log(count);
-    
+        const arrCount = strCount.split('');
+        let strOut = "";
+        
+        const arrCount2 = arrCount.map(item => item>0 ? item % 3 : 1); //1 대체?
+        //console.log(arrCount2);
+        for(let i = 0; i<arrCount2.length; i++){
+            if(!arrCount2[i]){
+                strOut += "짝";
+            }
+        }
+        if(strOut){
+            console.log(strOut);
+        } else {
+            console.log(count);
+        }
+        
     },[count])
 
     /*useEffect(() => { //처음 켤 때만 동작하는 내용
