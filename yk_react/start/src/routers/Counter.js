@@ -29,7 +29,7 @@ function Counter(){
             console.log(count);
         }
         
-    },[count])
+    },[count]);
 
     /*useEffect(() => { //처음 켤 때만 동작하는 내용
         console.log('Component did mount');
@@ -42,8 +42,7 @@ function Counter(){
             <h1>Counter: {count}</h1>
             <button onClick={increasement}>increasement</button>
             <button onClick={decreasement}>decreasement</button>
-        </div>
-        
+        </div>     
     )
 }
 

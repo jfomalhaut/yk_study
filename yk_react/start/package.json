@@ -9,13 +9,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "babel":{
+  "babel": {
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
     ]
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv-webpack": "^7.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",

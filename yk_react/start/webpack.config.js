@@ -1,6 +1,11 @@
+const DotEnv = require('dotenv-webpack');
+
 module.exports = { 
     entry: [ //시작점
         './src/index.js'
+    ],
+    plugins:[
+        new DotEnv()
     ],
     module: {
         rules: [
