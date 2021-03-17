@@ -28,3 +28,13 @@ react
 BrowserRouter
 
 <hook>, use-* 값을 다루는 방법
+
+[3일차]
+input의 활용
+Address 적용
+axios 사용
+
+[4일차]
+useEffect 활용
+styled-components 활용
+reducer
