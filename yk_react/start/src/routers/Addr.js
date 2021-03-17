@@ -8,6 +8,7 @@ const JUSO_API = process.env.JUSO_API;
 const JUSO_URL = process.env.JUSO_URL;
 
 const currentPerPage = 10;
+const VIEW_PAGE = 10;
 
 const Addr = () => {
     const [keyword, setKeyword] = useState('');
@@ -15,9 +16,11 @@ const Addr = () => {
     const [currentPage, setCurrentPage] = useState(1); 
     const [totalCount, setTotalCount] = useState(0);
     const [list, setList] = useState([]);
+    const [min, setMin] = useState(1);
+    const [max, setMax] = useState(10);
 
-    const [pageList, setPageList] = useState([]);
-    const pageBlock = 10;
+    
+    const maxPage = ( totalCount % currentPerPage === 0 ) ? totalCount / currentPerPage : Math.floor(totalCount / currentPerPage) + 1;
 
     const search = () => {
         const url = `${JUSO_URL}?confmKey=${JUSO_API}&currentPage=${currentPage}&countPerPage=${currentPerPage}&resultType=json&keyword=${keyword2}`;
@@ -28,50 +31,6 @@ const Addr = () => {
         }).catch(error => {
             console.log(error);
         });
-    };
-
-    const Pagenation = ( currentPage, totalCount ) => {
-        const maxPage = ( totalCount % currentPerPage === 0 ) ? totalCount / currentPerPage : Math.floor(totalCount / currentPerPage) + 1;
-        let pageData = { pageVal: 0, pageLabel: '', flagClick: 0 };
-        //const [pageData, setPageData] = useState({ pageVal: 0, pageLabel: '', flagClick: 0 });
-
-        if( currentPage !== 1 ){
-            pageData = { pageVal: 1, pageLabel: '◀◀', flagClick: 1 };
-            setPageList({
-                ...pageList,
-                pageData
-            }); 
-            
-            if(currentPage > currentPerPage) {
-                pageData = { pageVal: currentPage - currentPerPage, pageLabel: '◀', flagClick: 1 };
-            } else {
-                pageData = { pageVal: 1, pageLabel: '◀', flagClick: 1 }
-            };
-            setPageList({
-                ...pageList,
-                pageData
-            });
-            
-        }
-        
-        let startPage = currentPage > pageBlock ? currentPage - ( currentPage % pageBlock ) + 1 : 1;
-        let endPage = startPage + pageBlock - 1;
-        
-        if( endPage > maxPage ) endPage = maxPage;
-
-        for( let i = startPage ; i < endPage + 1 ; i++ ){
-            if( currentPage === i ){
-                pageData = { pageVal: i, pageLabel: i, flagClick: 0 };
-            } else {
-                pageData = { pageVal: i, pageLabel: i, flagClick: 1 };
-            }
-
-            setPageList(pageList.concat(pageData));
-            /*setPageList([
-                ...pageList,
-                pageData
-            ]);*/ 
-        }
     };
 
     const onSearch = (ev) => {
@@ -90,36 +49,14 @@ const Addr = () => {
     }, [keyword2]);
 
     useEffect(() => {
-        search();
-        Pagenation(1, totalCount);
+        if(keyword2 !== ''){
+            search(); 
+            //const _max = Math.ceil(currentPage / 10) * 10;
+            //setMax(_max);
+            const _min = Math.floor(currentPage / 10) * 10 + 1;  
+            setMin(_min);
+        }      
     }, [currentPage]);
-
-    /*useEffect(() => {
-        if(keyword !== ''){
-            console.log(pageList);
-        }
-    }, [pageList]);*/
-
-    /*return (
-        <div>
-            <form onSubmit={onSearch}>
-                <input value={keyword} onChange={(ev) => setKeyword(ev.target.value)} />
-                <button>검색</button>
-            </form>
-            <ul>
-                {list.map((item, idx) => (
-                    <li key={`ADDRESS${idx}`}>[{item.zipNo}]{item.roadAddrPart1}</li>
-                ))}
-            </ul>
-            <div>
-            <footer>
-                <button onClick={(ev) => setCurrentPage(currentPage - 1)}>이전</button>
-                    <b>{currentPage}</b>
-                <button onClick={(ev) => setCurrentPage(currentPage + 1)}>다음</button>
-            </footer>
-            </div>
-        </div>
-    )   */ 
 
     return (
         <div>
@@ -133,13 +70,13 @@ const Addr = () => {
                 ))}
             </ul>
             <div>
-            <footer>
-                <ul>
-                    {pageList.map((item, idx) => (
-                        <li key={`page${idx}`} onClick={(ev) => setCurrentPage(item.pageVal)}>{item.pageLabel}</li>
+                <footer>
+                    <button onClick={(ev) => setCurrentPage(currentPage - 1)}>이전</button>
+                    {[...new Array(VIEW_PAGE)].map((item, i) => (
+                        <span onClick={(ev) => setCurrentPage(max + i - 9)} style={{ margin: '10px', color: (max + i - 9) == currentPage ? 'red' : 'black' }}>{i + max - 9}</span>   
                     ))}
-                </ul>
-            </footer>
+                    <button onClick={(ev) => setCurrentPage(currentPage + 1)}>다음</button>
+                </footer>
             </div>
         </div>
     )
