@@ -1,0 +1,33 @@
+<html>
+<head>
+	<style>
+		.container { 
+			width: 1000px;
+			height: 700px;
+			margin: 50px auto;
+			display: flex;
+			justify-content: space-between;
+			justify-content: flex-end;
+			justify-content: space-around;
+			align-items: center;
+			/* flex-direction: column; */
+			background: #f0f0f0;
+		}
+		.box {
+			width: 200px;
+			height: 200px;
+			background: tomato;
+		}
+		.box:nth-child(odd) {
+			background: yellowgreen;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+</html>

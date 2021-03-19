@@ -3,6 +3,9 @@ import React, { useReducer } from 'react';
 const INCREASEMENT = 'INCREASEMENT';
 const DECREASEMENT = 'DECREASEMENT';
 
+const onIncreasement = () => ({ type: INCREASEMENT });
+const onDecreasement = () => ({ type: DECREASEMENT });
+
 const CounterReducer = (state, action) => {
 	switch(action.type) {
 		case INCREASEMENT: {
@@ -21,11 +24,11 @@ function Counter2() {
 	const [count, dispatch] = useReducer(CounterReducer, 0);
 
 	const increasement = () => {
-		dispatch({ type: INCREASEMENT });
-	};
+		dispatch(onIncreasement());
+	}; 
 
 	const decreasement = () => {
-		// setCount(count - 1);
+		dispatch(onDecreasement());
 	};
 
 	return (

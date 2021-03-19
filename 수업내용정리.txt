@@ -38,3 +38,7 @@ axios 사용
 useEffect 활용
 styled-components 활용
 reducer
+
+[5일차]
+addDventlistener,
+redux
