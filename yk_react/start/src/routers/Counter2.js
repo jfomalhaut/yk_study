@@ -4,27 +4,24 @@ const INCREASEMENT = 'INCREASEMENT';
 const DECREASEMENT = 'DECREASEMENT';
 const ADD_CUSTOM = 'ADD_CUSTOM';
 
+const onIncreasement = () => ({ type: INCREASEMENT });
+const onDecreasement = () => ({ type: DECREASEMENT });
+
 const CounterReducer = (state, action) => {
-    /*if( isNaN(action.addVal) ){
-        alert('숫자만 입력해주세요.');
-        let regex = /[^0-9]/g;
-        let result = action.addVal.replace(regex, "");
-    } else {*/
-        switch (action.type) {
-            case INCREASEMENT:
-                return state + 1;
-            
-            case DECREASEMENT:
-                return state - 1;
+    switch (action.type) {
+        case INCREASEMENT:
+            return state + 1;
+        
+        case DECREASEMENT:
+            return state - 1;
 
-            case ADD_CUSTOM:
-                return Number(state) + Number(action.addVal);
+        case ADD_CUSTOM:
+            return Number(state) + Number(action.addVal);
 
-            default: {
-                return state;
-            }
+        default: {
+            return state;
         }
-    //}
+    }
 };
 
 function Counter2(){
@@ -32,7 +29,7 @@ function Counter2(){
     const [addVal, setAddVal] = useState(0);
 
     const increasement = () => {
-        dispatch({ type: INCREASEMENT });
+        dispatch(onIncreasement());
     }
     
     const decreasement = () => {
