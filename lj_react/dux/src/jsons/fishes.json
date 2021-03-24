@@ -1,0 +1,86 @@
+[
+	{
+		"id": 1,
+		"name": "영광굴비",
+		"price": 12500,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1584496590885l0.jpg",
+		"check": false
+	},
+	{
+		"id": 2,
+		"name": "도다리 2종",
+		"price": 13890,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1552887814245l0.jpg",
+		"check": false
+	},
+	{
+		"id": 3,
+		"name": "절단 코다리",
+		"price": 21990,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1584509053186l0.jpg",
+		"check": false
+	},
+	{
+		"id": 4,
+		"name": "물회",
+		"price": 8900,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1554104031692l0.jpg",
+		"check": false
+	},
+	{
+		"id": 5,
+		"name": "통영 참병어",
+		"price": 2480,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1579245034865l0.jpg",
+		"check": false
+	},
+	{
+		"id": 6,
+		"name": "오징어채",
+		"price": 3590,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1583891961890l0.jpg",
+		"check": false
+	},
+	{
+		"id": 7,
+		"name": "손질 갈치 특대",
+		"price": 4490,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1583832125210l0.jpg",
+		"check": false
+	},
+	{
+		"id": 8,
+		"name": "손질 갈치 대",
+		"price": 6900,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1583830451767l0.jpg",
+		"check": false
+	},
+	{
+		"id": 9,
+		"name": "민어굴비",
+		"price": 12800,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1583128536523l0.jpg",
+		"check": false
+	},
+	{
+		"id": 10,
+		"name": "부세조기",
+		"price": 14900,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1583130217666l0.jpg",
+		"check": false
+	},
+	{
+		"id": 11,
+		"name": "참다랑어",
+		"price": 12800,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1582077875436l0.jpg",
+		"check": false
+	},
+	{
+		"id": 12,
+		"name": "참가자미",
+		"price": 19000,
+		"src": "https://img-cf.kurly.com/shop/data/goods/1580783973108l0.jpg",
+		"check": false
+	}
+]

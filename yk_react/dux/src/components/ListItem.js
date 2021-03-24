@@ -3,18 +3,20 @@ import styled from 'styled-components';
 
 const nf = new Intl.NumberFormat();
 
-function ListItem({ onCheck, item: { id, src, name, price, check } }) {
+function ListItem({ onCheck, item, item: { id, src, name, price, check } }) {
+    console.log(item);
     return(
-        <ListContainer active={check}>
-            <span className={check ? 'active' : ''} onClick={() => onCheck(id)} />
+        <ListContainer active={item.check}>
+            <span className={item.check ? 'active' : ''} onClick={() => onCheck(id)} />
             <img src={src} />
             <article>
+                <h1>{item.check ? 'true': 'false'}</h1>
                 <span>{name}</span>
                 <span>{nf.format(price)}원</span>
             </article>
         </ListContainer>
     );
-}
+} 
 
 export default ListItem;
 

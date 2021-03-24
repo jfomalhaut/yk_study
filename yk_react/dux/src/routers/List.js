@@ -5,8 +5,6 @@ import Items from '../jsons/fishes.json';
 import styled from 'styled-components';
 import ListItem from '../components/ListItem';
 
-const nf = new Intl.NumberFormat();
-
 function List(){
     const dispatch = useDispatch();
     const [list, setList] = useState(Items);
@@ -17,7 +15,8 @@ function List(){
     }
 
     useEffect(() => {
-        console.log(list);
+        // const test = list.filter(item => item.check);
+        // console.log(test);
     }, [list]);
 
     const addToCart = () => {
