@@ -14,26 +14,32 @@ function List(){
         setList(newList);
     }
 
+    const checkAll = () => {
+        const flag = list.some(item => !item.check ); // false 가 하나라도 있으면
+        const newList = list.map(item => ({ ...item, check: flag }) );
+        setList(newList);
+    }
+
     useEffect(() => {
         // const test = list.filter(item => item.check);
         // console.log(test);
     }, [list]);
 
-    const addToCart = () => {
-        dispatch(CartAction.addToCart());
+    const addToCart = (item) => {
+        dispatch(CartAction.addToCart(item));
 
     };
 
     return (
         <ListContainer>
         <div>
-            <button>전체선택</button>
+            <button onClick={checkAll}>전체선택</button>
             <button>선택삭제</button>
             <button>전체삭제</button>
         </div>
         <ul>
-            {Items.map(item => (
-                <ListItem onCheck={onCheck} item={item} key={`ITEMS${item.id}`} />
+            {list.map(item => (
+                <ListItem addToCart={addToCart} onCheck={onCheck} item={item} key={`ITEMS${item.id}`} />
             ))}
         </ul>
         </ListContainer>

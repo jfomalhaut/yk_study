@@ -36,13 +36,36 @@ function Header(){
         </ul>
         <div>
             <GrCart />
-            <span>{cart}</span>
+            <Count count={cart.length} />
         </div>
         </HeaderContainer>
     );
 };
 
 export default Header;
+
+const Count = styled.span`
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #198942;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:before{
+        content: '${props => props.count}';
+        color:#fff;
+        font-size:20px;
+        position: absolute;
+        height: 20px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+`;
 
 const HeaderContainer = styled.header`
     display: flex;
