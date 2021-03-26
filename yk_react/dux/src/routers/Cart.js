@@ -28,6 +28,11 @@ function Cart(){
         dispatch(CartAction.checkCartItem(item));
     };
 
+    const checkAll = () => {
+        const flag = cart.some(item => !item.check );
+        dispatch(CartAction.checkAll());
+    }
+
     // if(cart.length > 0 ){
 
     // }
@@ -45,7 +50,7 @@ function Cart(){
         return (
             <CartContainer>
                 <div>
-                    <button>전체선택</button>
+                    <button onClick={checkAll()}>전체선택</button>
                     <button>선택삭제</button>
                 </div>
                 <div>
