@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const nf = new Intl.NumberFormat();
 
-function ListItem({ onCheck, item: { id, src, name, price, check } }) {
+function ListItem({ addToCart, onCheck, item }) {
+	const { id, src, name, price, check } = item;
 	return (
 		<ListContainer active={check}>
 			<span className={check ? 'active' : ''} onClick={() => onCheck(id)} />
@@ -11,6 +12,7 @@ function ListItem({ onCheck, item: { id, src, name, price, check } }) {
 			<article>
 				<span>{name}</span>
 				<span>{nf.format(price)}원</span>
+				<button onClick={() => addToCart(item)}>담기</button>
 			</article>
 		</ListContainer>
 	);
@@ -61,6 +63,10 @@ const ListContainer = styled.li`
 		span {
 			font-size: 20px;
 			margin: 5px 0;
+		}
+		button {
+			padding: 5px 0;
+			font-size: 20px;
 		}
 	}
 `;

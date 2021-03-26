@@ -18,6 +18,10 @@ function Header() {
 	};
 
 	useEffect(() => {
+		console.log(cart);
+	}, [cart]);
+
+	useEffect(() => {
 		window.addEventListener('scroll', onScroll);
 		return () => window.removeEventListener('scroll', onScroll);
 	}, []);
@@ -37,7 +41,7 @@ function Header() {
 			</ul>
 			<div>
 				<GrCart />
-				<Count count={cart} />
+				<Count count={cart.length} />
 			</div>
 		</HeaderContainer>
 	)
