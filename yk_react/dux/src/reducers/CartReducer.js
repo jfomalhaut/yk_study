@@ -1,9 +1,29 @@
 import { CartAction } from '../actions';
 
-const { ADD_TO_CART } = CartAction;
+const { ADD_TO_CART, REMOVE_TO_CART, DELETE_TO_CART } = CartAction;
+//const { REMOVE_TO_CART } = CartAction;
+//const { ADD_TO_CART } = CartAction;
 
 const initialState = {
-    cart: []
+    //cart: []
+    cart: [
+        {
+            "id": 1,
+            "name": "영광굴비",
+            "price": 12500,
+            "src": "https://img-cf.kurly.com/shop/data/goods/1584496590885l0.jpg",
+            "check": false,
+            "count": 1
+        },
+        {
+            "id": 2,
+            "name": "도다리 2종",
+            "price": 13890,
+            "src": "https://img-cf.kurly.com/shop/data/goods/1552887814245l0.jpg",
+            "check": false,
+            "count": 2
+        }
+    ]
 };
 
 const CartReducer = (state = initialState, action) => {
@@ -18,7 +38,17 @@ const CartReducer = (state = initialState, action) => {
                 state.cart.map(item => item.id === action.item.id ? ({ ...item, count: item.count + 1}) : item )
             };
         }
-        
+        case REMOVE_TO_CART: {
+            return {
+                ...state,
+                cart: state.cart.map(item => item.id === action.item.id ? ({ ...item, count: item.count - 1}) : item )
+            };            
+        }
+        case DELETE_TO_CART: {
+            return {
+                cart: state.cart.filter(item => item.id !== action.item.id)
+            }
+        }
         default: {
             return state;
         }

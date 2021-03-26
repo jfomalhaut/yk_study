@@ -86,16 +86,16 @@ const HeaderContainer = styled.header`
         li{
             padding: 5px 10px;
             font-size: 20px;
-            a{
-                text-decoration: none;
-                color: ${props => props.active ? '#fff' : '#0003'};
-                &:visited, &:link {
-                    color:#000;
-                }
-                &:hover {
-                    color:blue;
-                }
-            }
+            a {
+				text-decoration: none;
+				color: ${props => props.active ? '#fff' : '#444'};
+				&:visited, &:link {
+					color: ${props => props.active ? '#fff' : '#444'};
+				}
+				&:hover {
+					color: blue;
+				}
+			}
         }
     }
     div {
@@ -103,7 +103,9 @@ const HeaderContainer = styled.header`
         position: relative;
         svg {
             font-size: 40px;
-            /*path:*/ 
+            path {
+				stroke: ${props => props.active ? '#fff' : '#444'};
+			}
         }
         span {
             position: absolute;

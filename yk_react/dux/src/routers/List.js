@@ -27,7 +27,6 @@ function List(){
 
     const addToCart = (item) => {
         dispatch(CartAction.addToCart(item));
-
     };
 
     return (
