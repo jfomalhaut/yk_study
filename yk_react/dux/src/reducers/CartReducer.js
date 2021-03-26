@@ -1,6 +1,6 @@
 import { CartAction } from '../actions';
 
-const { ADD_TO_CART, REMOVE_TO_CART, DELETE_TO_CART } = CartAction;
+const { ADD_TO_CART, REMOVE_TO_CART, DELETE_TO_CART, CHECK_CART_ITEM } = CartAction;
 //const { REMOVE_TO_CART } = CartAction;
 //const { ADD_TO_CART } = CartAction;
 
@@ -49,6 +49,12 @@ const CartReducer = (state = initialState, action) => {
                 cart: state.cart.filter(item => item.id !== action.item.id)
             }
         }
+        case CHECK_CART_ITEM: {
+            return {
+                cart: state.cart.map(item => item.id === action.item.id ? ({ ...item, check : !item.check }) : item )
+            }
+        }
+
         default: {
             return state;
         }

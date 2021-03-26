@@ -24,9 +24,9 @@ function Cart(){
         dispatch(CartAction.deleteToCart(item));
     };
 
-    const onCheck = (id, check) => {
-
-    }
+    const onCheck = (item) => {
+        dispatch(CartAction.checkCartItem(item));
+    };
 
     // if(cart.length > 0 ){
 
@@ -54,7 +54,7 @@ function Cart(){
                             <li>
                                 <div>
                                     <div className={'checkWrap'}>
-                                        <span className={item.check ? 'active' : ''} onClick={() => onCheck(item.id, item.check)}>{ item.check === true ? 'true' : 'false' }</span>
+                                        <span className={item.check ? 'active' : ''} onClick={() => onCheck(item)}>{ item.check === true ? 'true' : 'false' }</span>
                                     </div>
                                     <img src={item.src} />
                                     <div className={'nameWrap'}><span>{item.name}</span></div>
