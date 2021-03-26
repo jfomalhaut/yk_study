@@ -46,25 +46,14 @@ function Cart(){
     //         ))}
     //     </ul>;
         
-<<<<<<< HEAD
-    if (cart.length > 0 ){
-        return (
-            <CartContainer>
-                <div>
-                    <button onClick={checkAll()}>전체선택</button>
-                    <button>선택삭제</button>
-                </div>
-                <div>
-=======
     return (
         <CartContainer>
             <div>
-                <button>전체선택</button>
+                <button onClick={checkAll()}>전체선택</button>
                 <button>선택삭제</button>
             </div>
             <div>
                 {cart.length >  0 ? (
->>>>>>> 07c6234a29e1e841857301102b96b07c0796b24d
                     <ul>
                         {cart.map(item => (
                             <li>
