@@ -41,14 +41,14 @@ function Cart(){
     //         ))}
     //     </ul>;
         
-    if (cart.length > 0 ){
-        return (
-            <CartContainer>
-                <div>
-                    <button>전체선택</button>
-                    <button>선택삭제</button>
-                </div>
-                <div>
+    return (
+        <CartContainer>
+            <div>
+                <button>전체선택</button>
+                <button>선택삭제</button>
+            </div>
+            <div>
+                {cart.length >  0 ? (
                     <ul>
                         {cart.map(item => (
                             <li>
@@ -74,19 +74,13 @@ function Cart(){
                             </li>
                         ))}
                     </ul>
-                </div>
-            </CartContainer>
-        );
+                ) : (
+                    <div>장바구니가 비어있습니다</div>
+                )}
+            </div>
+        </CartContainer>
+    );
 
-    } else {
-        return(
-            <CartContainer>
-                <div>
-                    카트에 담긴 물건이 없습니다.
-                </div>
-            </CartContainer>
-        );
-    }
 }
 
 export default Cart;
