@@ -41,7 +41,10 @@ reducer
 
 [5일차]
 addEventlistener,
-redux
+redux 
 
 [6일차]
 redux
+
+[7일차]
+nodejs

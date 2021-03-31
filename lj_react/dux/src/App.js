@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/Header';
-import { Cart, Detail, List } from './rotuers';
+import { Cart, Detail, List, Login } from './rotuers';
 import styled, { createGlobalStyle } from 'styled-components';
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
 				<Route path="/list" component={List} />
 				<Route path="/detail" component={Detail} />
 				<Route path="/cart" component={Cart} />
+				<Route path="/login" component={Login} />
 			</Container>
 		</BrowserRouter>
 	);

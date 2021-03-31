@@ -1,5 +1,7 @@
 import CartAction from './CartAction';
+import UserAction from './UserAction';
 
 export {
-	CartAction
+	CartAction,
+	UserAction,
 };

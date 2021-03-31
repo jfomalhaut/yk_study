@@ -2,17 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { CartAction } from '../actions';
 import styled from 'styled-components';
-import Items from '../jsons/fishes.json';
 import ListItem from '../components/ListItem';
+import { GetData } from '../api';
 
 function List() {
 	const dispatch = useDispatch();
-	const [list, setList] = useState(Items);
+	const [list, setList] = useState([]);
 
 	const onCheck = (id) => {
-		// 수정 => map
-		// 삭제 => filter
-		// 추가 => concat
+		// 수정 => map, 삭제 => filter, 추가 => concat
 		const newList = list.map(item => item.id === id ? ({ ...item, check: !item.check }) : item);
 		setList(newList);
 	};
@@ -26,6 +24,19 @@ function List() {
 	const addToCart = (item) => {
 		dispatch(CartAction.addToCart(item));
 	};
+
+	const getData = async () => {
+		try {
+			const { data: { data } } = await GetData();
+			setList(data);
+		} catch (err) {
+			alert('Network Error');
+		}
+	};
+
+	useEffect(() => {
+		getData();
+	}, []);
 
 	return (
 		<ListContainer>

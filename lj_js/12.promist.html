@@ -1,0 +1,35 @@
+<html>
+<body>
+	<script>
+
+		first().then(res => {
+			if (res) {
+				second().then(res2 => {
+					if (res2) {
+						third();
+					}
+				});
+			}
+		});
+
+		function first() {
+			return new Promise((resolve, reject) => {
+				console.log('first');
+				resolve(true);
+			})
+		}
+
+		function second() {
+			return new Promise((resolve, reject) => {
+				console.log('second');
+				resolve(true);
+			})
+		}
+
+		function third() {
+			console.log('third!');
+		}
+
+	</script>
+</body>
+</html>

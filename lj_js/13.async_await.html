@@ -1,0 +1,40 @@
+<html>
+<body>
+	<script>
+
+		print();
+
+		function getData() {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					resolve(true);
+				}, 1000);
+			})
+		}
+
+		async function print() {
+			const data1 = await first();
+			const data2 = await second();
+			const data3 = await third();
+			console.log(data1, data2, data3);
+		}
+
+		function first() {
+			return new Promise(resolve => {
+				setTimeout(() => {
+					resolve('first');
+				}, 2000);
+			});
+		}
+
+		const second = () => {
+			return 'second';
+		};
+
+		const third = () => {
+			return 'third';
+		};
+
+	</script>
+</body>
+</html>
