@@ -1,0 +1,7 @@
+release
+1) react로 만들기 -> build
+2) back단 구현
+node.js
+dist 추가
+3)호스팅 서버, 인스턴스(AWS)로 업로드
+4) PM2와 같은 걸로 계속 돌려준다

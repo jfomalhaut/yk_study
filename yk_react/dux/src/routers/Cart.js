@@ -49,7 +49,7 @@ function Cart(){
     return (
         <CartContainer>
             <div>
-                <button onClick={checkAll()}>전체선택</button>
+                <button onClick={() => checkAll()}>전체선택</button>
                 <button>선택삭제</button>
             </div>
             <div>
@@ -59,7 +59,7 @@ function Cart(){
                             <li>
                                 <div>
                                     <div className={'checkWrap'}>
-                                        <span className={item.check ? 'active' : ''} onClick={() => onCheck(item)}>{ item.check === true ? 'true' : 'false' }</span>
+                                        <span className={item.check ? 'active' : ''} onClick={() => onCheck(item)}></span>
                                     </div>
                                     <img src={item.src} />
                                     <div className={'nameWrap'}><span>{item.name}</span></div>
@@ -98,8 +98,7 @@ const CartContainer = styled.main`
             display:flex;
             border-bottom:1px solid #ccc;
             font-size: 20px;
-            div{
-                
+            div{                
                 width:100%;
                 div{ float:left; padding: 10px; margin-top:5%}
                 img{
@@ -108,7 +107,24 @@ const CartContainer = styled.main`
                 }
                 .checkWrap{
                     width:50px;
-                    span{ cursor:pointer; }
+                    span { 
+                        cursor:pointer;
+                        height: 24px;
+                        width: 24px;
+                        box-sizing:border-box;
+                        position:absolute;
+                        border: 1px solid;
+                        padding: 3px;
+                    }
+                    span.active {
+                        &:before{
+                            content: '';
+                            width:calc(100% - 6px);
+                            height:calc(100% - 6px);
+                            position:absolute;
+                            background: #198942;
+                        }
+                    }
                 }
                 .nameWrap{
                     width:330px;
