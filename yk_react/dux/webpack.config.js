@@ -1,5 +1,6 @@
 module.exports = { 
     entry: [ //시작점
+        '@babel/polyfill',
         './src/index.js'
     ],
     module: {

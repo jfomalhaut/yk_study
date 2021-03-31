@@ -4,6 +4,8 @@ import { CartAction } from '../actions';
 import Items from '../jsons/fishes.json';
 import styled from 'styled-components';
 import ListItem from '../components/ListItem';
+import Axios from 'axios';
+import { GetData } from '../api';
 
 function List(){
     const dispatch = useDispatch();
@@ -28,6 +30,30 @@ function List(){
     const addToCart = (item) => {
         dispatch(CartAction.addToCart(item));
     };
+
+    const getData = async () => {
+        /*Axios.get('http://localhost:4000/api/getData').then(res => {
+            console.log(res);
+        });*/
+
+        // const { data: { data } } = await Axios.get('http://localhost:4000/api/getData');
+        // setList(data);
+        
+        //const { data: { data } } = await GetData();
+        //setList(data);
+
+        try {
+            const { data: { data } } = await GetData();
+            setList(data);
+        } catch (err) {
+            console.log(err);
+        }
+
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     return (
         <ListContainer>

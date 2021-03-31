@@ -33,6 +33,9 @@ function Header(){
             <li>
                 <Link to="/Cart">Cart</Link>
             </li>
+            <li>
+                <Link to="/Login">Login</Link>
+            </li> 
         </ul>
         <div>
             <GrCart />
